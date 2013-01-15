@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hello UCD!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2I-0e-vwo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="jhZ-f8-YYK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ucdlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ihq-jA-KpX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="238" id="Zeb-IJ-MLh"/>
+                                    <constraint firstAttribute="height" constant="324" id="cAD-za-Z2j"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a2I-0e-vwo" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Eks-cT-LOK"/>
+                            <constraint firstItem="Ihq-jA-KpX" firstAttribute="centerX" secondItem="a2I-0e-vwo" secondAttribute="centerX" type="default" id="MDl-2L-hxx"/>
+                            <constraint firstItem="a2I-0e-vwo" firstAttribute="top" secondItem="3" secondAttribute="top" constant="25" id="rCK-Zp-5U4"/>
+                            <constraint firstAttribute="trailing" secondItem="a2I-0e-vwo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="woy-fW-GBT"/>
+                            <constraint firstItem="Ihq-jA-KpX" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="zvk-ao-yiG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ucdlogo.png" width="196" height="285"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
