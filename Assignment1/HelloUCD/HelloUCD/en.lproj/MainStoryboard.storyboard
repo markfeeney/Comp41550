@@ -31,9 +31,9 @@
                         <constraints>
                             <constraint firstItem="a2I-0e-vwo" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Eks-cT-LOK"/>
                             <constraint firstItem="Ihq-jA-KpX" firstAttribute="centerX" secondItem="a2I-0e-vwo" secondAttribute="centerX" type="default" id="MDl-2L-hxx"/>
+                            <constraint firstItem="Ihq-jA-KpX" firstAttribute="top" secondItem="3" secondAttribute="top" constant="87" id="VTm-6P-3UZ"/>
                             <constraint firstItem="a2I-0e-vwo" firstAttribute="top" secondItem="3" secondAttribute="top" constant="25" id="rCK-Zp-5U4"/>
                             <constraint firstAttribute="trailing" secondItem="a2I-0e-vwo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="woy-fW-GBT"/>
-                            <constraint firstItem="Ihq-jA-KpX" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="zvk-ao-yiG"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -44,6 +44,14 @@
     <resources>
         <image name="ucdlogo.png" width="196" height="285"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
