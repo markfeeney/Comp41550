@@ -1,0 +1,18 @@
+Mark, Feeney, 12258178, mark.feeney@ucdconnect.ie
+
+Assignment 2
+
+
+//Comments
+Implemented Buttons and UIStepper increase / decrease and Left / Right Swipe Gesture Controls to control the poloygon selection.
+
+Decrease / Increase buttons enable and disable when min / max polygon sides are reached.
+
+Implemented 2 View Controllers via a tab view control
+Polygon tab has main functionality 
+Setings tab allows user to polygon change color
+Using NSUserDefaults to save color choice to phone
+
+Notes on Polygon Tab design:
+Normally I wouldn't put UIButtons (increase an decrease number of sides) and UIStepper contol and SwipeGesture controls as the UI is starting to look overly complicated. I have included them "For Show".
+

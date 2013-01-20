@@ -12,6 +12,7 @@
 
 @property (nonatomic) int numberOfSides;
 @property (readonly,weak) NSString *name;
+@property (nonatomic,weak) UIColor *color;
 
 - (id)initWithNumberOfSides:(int)sides;
 

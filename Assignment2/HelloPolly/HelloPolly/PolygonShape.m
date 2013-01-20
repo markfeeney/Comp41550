@@ -11,7 +11,6 @@
 #define MAX_SIDES 12
 #define MIN_SIDES 3
 
-
 @implementation PolygonShape
 
 @synthesize numberOfSides = _numberOfSides;
@@ -57,5 +56,7 @@
 - (NSString *)description {
 	return [NSString stringWithFormat:@"Hello I am a %d-sided polygon (aka a %@).", self.numberOfSides,self.name];
 }
+
+
 
 @end
