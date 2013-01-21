@@ -54,6 +54,7 @@
 - (void)drawRect:(CGRect)rect{
     // Drawing code
     int numberOfSidesFromDelegate = [self.polygonViewDelegate numberOfSidesForPolygon];
+    UIColor * colorFromDelegate = [self.polygonViewDelegate color];
     
     //numberOfSidesFromDelegate = 3;
     NSLog(@"Number of Sides is  %i" ,numberOfSidesFromDelegate);
@@ -99,16 +100,8 @@
     }
     CGContextClosePath(context);
     
-    //CGContextSetFillColorWithColor(context, [UIColor greenColor].CGColor);
-    // todo implement color via property
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    
-    float red = [prefs floatForKey:@"cr"];
-    float green = [prefs floatForKey:@"cg"];
-    float blue = [prefs floatForKey:@"cb"];
-    float alpha = [prefs floatForKey:@"ca"];
-    
-    CGContextSetFillColorWithColor(context,  [UIColor colorWithRed:red green:green blue:blue alpha:alpha].CGColor);
+    //CGContextSetFillColorWithColor(context,  [UIColor colorWithRed:red green:green blue:blue alpha:alpha].CGColor);
+    CGContextSetFillColorWithColor(context,  colorFromDelegate.CGColor);
 
     CGContextDrawPath(context, kCGPathFillStroke);
     

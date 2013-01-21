@@ -64,6 +64,7 @@
 - (IBAction)sidesStepper:(id)sender {
     NSLog(@"%f", self.stepperValue.value);
     self.polygonModel.numberOfSides = self.stepperValue.value;
+    
     [self UpdateUI];
     
 }
@@ -116,7 +117,6 @@
     }else{
         self.decreaseButton.enabled = NO;
     }
-
     
     [self.PoloygonView setNeedsDisplay];
     
@@ -132,7 +132,6 @@
     float alpha = [prefs floatForKey:@"ca"];
     
     UIColor* savedColor = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-    
     NSLog(@"%@", savedColor);
     
     return savedColor;

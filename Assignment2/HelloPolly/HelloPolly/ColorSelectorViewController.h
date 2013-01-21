@@ -16,8 +16,10 @@
 @property (weak, nonatomic) IBOutlet UISlider *greenColor;
 @property (weak, nonatomic) IBOutlet UISlider *blueColor;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic) float alpha;
 
 - (IBAction)updateView;
+-(void)SaveColorSettings;
 
 
 @end

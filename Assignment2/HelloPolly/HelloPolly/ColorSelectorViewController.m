@@ -35,10 +35,13 @@
     float red = [prefs floatForKey:@"cr"];
     float green = [prefs floatForKey:@"cg"];
     float blue = [prefs floatForKey:@"cb"];
+    float alpha = [prefs floatForKey:@"ca"];
+    
     
     self.redColor.value = red * 255;
     self.greenColor.value = green * 255;
     self.blueColor.value = blue * 255;
+    self.alpha = alpha;
     
     [self updateView];
     
@@ -47,20 +50,6 @@
     [self.imageView.layer setBorderWidth: 2.0];
 }
 
--(void)viewWillDisappear:(BOOL)animated
-{
-    // Save Settings
-    UIColor *color  = self.polygonColorPreview.backgroundColor;
-    NSLog(@"%@", color);
-    
-    const CGFloat  *components = CGColorGetComponents(color.CGColor);
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setFloat:components[0]  forKey:@"cr"];
-    [prefs setFloat:components[1]  forKey:@"cg"];
-    [prefs setFloat:components[2]  forKey:@"cb"];
-    [prefs setFloat:components[3]  forKey:@"ca"];
-
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -68,12 +57,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)updateView {
+    
+    //self.polygonColorPreview.backgroundColor = [UIColor colorWithRed:self.redColor.value/255 green:self.greenColor.value/255 blue:self.blueColor.value/255 alpha:1.0];
+    self.polygonColorPreview.backgroundColor = [UIColor colorWithRed:self.redColor.value/255 green:self.greenColor.value/255 blue:self.blueColor.value/255 alpha:self.alpha];
+    // Save Settings
+    UIColor *color  = self.polygonColorPreview.backgroundColor;
+    NSLog(@"%@", color);
+    self.alpha = 1.0;   
+    [self SaveColorSettings];
 
-    self.polygonColorPreview.backgroundColor = [UIColor colorWithRed:self.redColor.value/255 green:self.greenColor.value/255 blue:self.blueColor.value/255 alpha:1.0];
    }
+-(void)SaveColorSettings
+{
+    // Save Settings
+    UIColor *color  = self.polygonColorPreview.backgroundColor;
+    
+    NSLog(@"%@", color);
 
+    const CGFloat  *components = CGColorGetComponents(color.CGColor);
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setFloat:components[0]  forKey:@"cr"];
+    [prefs setFloat:components[1]  forKey:@"cg"];
+    [prefs setFloat:components[2]  forKey:@"cb"];
+    [prefs setFloat:components[3]  forKey:@"ca"];
+}
 
 
 

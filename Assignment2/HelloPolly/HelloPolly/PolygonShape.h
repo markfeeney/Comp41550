@@ -11,9 +11,10 @@
 @interface PolygonShape : NSObject
 
 @property (nonatomic) int numberOfSides;
+@property (nonatomic) UIColor *color;
 @property (readonly,weak) NSString *name;
-@property (nonatomic,weak) UIColor *color;
 
 - (id)initWithNumberOfSides:(int)sides;
+- (id)initWithNumberOfSides:(int)sides AndColor:(UIColor * )color;
 
 @end

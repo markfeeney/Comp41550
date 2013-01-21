@@ -14,9 +14,12 @@
 @implementation PolygonShape
 
 @synthesize numberOfSides = _numberOfSides;
+@synthesize color = _color;
 
 - (id)init {
-	return [self initWithNumberOfSides:5];
+	//return [self initWithNumberOfSides:5];
+    return [self initWithNumberOfSides:5 AndColor:[UIColor blueColor]];
+    
 }
 
 - (id)initWithNumberOfSides:(int)sides {
@@ -25,6 +28,12 @@
 	return self;
 }
 
+- (id)initWithNumberOfSides:(int)sides AndColor:(UIColor * )color {
+    if (!(self = [super init])) return nil;
+    self.numberOfSides = sides;
+    self.color = color;
+	return self;
+}
 - (void)setNumberOfSides:(int)numberOfSides {
     if(numberOfSides > MAX_SIDES) {
 		NSLog(@"Invalid number of sides: %d is greater than the maximum of %d allowed", numberOfSides, MAX_SIDES);
@@ -35,6 +44,10 @@
 		return;
 	}
 	_numberOfSides = numberOfSides;
+}
+
+- (void)setcolor:(UIColor *)color {
+	_color = color;
 }
 
 - (NSString *)name {
