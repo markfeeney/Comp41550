@@ -28,6 +28,6 @@
 - (IBAction)swipeGestureLeft:(UISwipeGestureRecognizer *)sender;
 
 -(UIColor *)GetColorFromNSUserDefaults;
-    
+-(void)SaveDefaultColorSettings;
 
 @end

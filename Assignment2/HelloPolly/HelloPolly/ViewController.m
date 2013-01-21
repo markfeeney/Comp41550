@@ -131,11 +131,26 @@
     float blue = [prefs floatForKey:@"cb"];
     float alpha = [prefs floatForKey:@"ca"];
     
+    if (alpha == 0){
+        [self SaveDefaultColorSettings];
+    }
+         
+    
     UIColor* savedColor = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
     NSLog(@"%@", savedColor);
     
     return savedColor;
 }
-
+-(void)SaveDefaultColorSettings
+{
+    // Save Settings
+    UIColor *color  = [UIColor blueColor];
+    const CGFloat  *components = CGColorGetComponents(color.CGColor);
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setFloat:components[0]  forKey:@"cr"];
+    [prefs setFloat:components[1]  forKey:@"cg"];
+    [prefs setFloat:components[2]  forKey:@"cb"];
+    [prefs setFloat:components[3]  forKey:@"ca"];
+}
 
 @end

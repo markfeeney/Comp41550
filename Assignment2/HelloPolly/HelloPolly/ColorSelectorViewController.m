@@ -64,7 +64,7 @@
     // Save Settings
     UIColor *color  = self.polygonColorPreview.backgroundColor;
     NSLog(@"%@", color);
-    self.alpha = 1.0;   
+    
     [self SaveColorSettings];
 
    }
