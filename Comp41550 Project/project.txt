@@ -1,0 +1,30 @@
+My project is based around an IP Network Scanner.
+
+When your iPad / Device is connected to a wireless network, 
+It will scan the network for active devices currently connected to the same network.
+
+It will report back details for each connected device - such as 
+-IP Addresses 
+-MAC Address
+-Hardware Information - PC / MAC / Mobile Device
+-Operating system Type - Windows / Mac / Linux
+-Operating system Version - XP / Win 7 / Win 8 / Mac OS X / IOS 
+- Machine Name
+- Open ports
+
+Also report on General Network statistics.
+- Available Bandwidth
+- Percentage Utilisation
+
+I want to include a telnet / ssh client to allow the user select a device typically a CISCO router or switch and be able to connect remotely to view / check configurations
+
+I also would like to include standard diagnostics
+-Ping
+-Tracert
+-pathping
+I will log the statistics to a database for later viewing, perhaps using a webservice to communicate them back to a dabatase.
+This will allow me to incorporate the Core Data and Core WLan frameworks.
+Time permitting I would also like to include a packet sniffer to capture data on the network to assist troubleshooting of issues on Layer 1 - 4 of the OSI Model
+
+
+
