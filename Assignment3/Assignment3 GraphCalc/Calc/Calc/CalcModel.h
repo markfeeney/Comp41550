@@ -12,7 +12,6 @@
 @property (nonatomic) double operand;
 @property (nonatomic) double waitingOperand;
 @property (nonatomic) NSString *waitingOperation;
-@property (nonatomic) double memoryValue;
 
 -(double)performOperation:(NSString *)operation;
 

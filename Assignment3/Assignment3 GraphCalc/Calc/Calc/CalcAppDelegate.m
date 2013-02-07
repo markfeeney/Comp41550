@@ -1,14 +1,14 @@
 //
-//  AppDelegate.m
+//  CalcAppDelegate.m
 //  Calc
 //
-//  Created by Mark Feeney on 06/02/2013.
+//  Created by Mark Feeney on 07/02/2013.
 //  Copyright (c) 2013 Mark Feeney. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "CalcAppDelegate.h"
 
-@implementation AppDelegate
+@implementation CalcAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

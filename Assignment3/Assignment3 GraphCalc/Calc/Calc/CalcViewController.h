@@ -13,13 +13,10 @@
 
 @property (nonatomic, weak)IBOutlet CalcModel *calcModel;
 @property (nonatomic, weak)IBOutlet UILabel *calcDisplay;
-@property (nonatomic) BOOL isInTheMiddleOfTypingSomething;
-@property (nonatomic) BOOL isTypingFloatingPointNumber;
+@property (nonatomic) BOOL isInTheMiddleOftypingSomething;
 
-
-- (IBAction)digitPressed:(UIButton *)sender;
-- (IBAction)operationPressed:(UIButton *)sender;
-- (IBAction)decimalPressed:(UIButton *)sender;
+-(IBAction)digitPressed:(UIButton *)sender;
+-(IBAction)operationPressed:(UIButton *)sender;
 
 
 @end

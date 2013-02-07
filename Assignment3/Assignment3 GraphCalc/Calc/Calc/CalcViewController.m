@@ -16,47 +16,29 @@
 // @synthesize not really required as Xcode synthesizes automatically
 @synthesize calcModel = _calcModel;
 @synthesize calcDisplay = _calcDisplay;
-@synthesize isInTheMiddleOfTypingSomething = _isInTheMiddleOfTypingSomething;
-@synthesize isTypingFloatingPointNumber = _isTypingFloatingPointNumber;
-
+@synthesize isInTheMiddleOftypingSomething = _isInTheMiddleOftypingSomething;
 
 
 -(IBAction)digitPressed:(UIButton *)sender{
     NSString *digit = sender.titleLabel.text;
-    if(self.isInTheMiddleOfTypingSomething)
+    if(self.isInTheMiddleOftypingSomething)
         self.calcDisplay.text = [self.calcDisplay.text stringByAppendingString:digit];
     else{
         [self.calcDisplay setText:digit];
-        self.isInTheMiddleOfTypingSomething = YES;
+        self.isInTheMiddleOftypingSomething = YES;
     }
 }
 
 -(IBAction)operationPressed:(UIButton *)sender
 {
-    if(self.isInTheMiddleOfTypingSomething){
+    if(self.isInTheMiddleOftypingSomething){
         self.calcModel.operand = [self.calcDisplay.text doubleValue];
-        self.isInTheMiddleOfTypingSomething = NO;
-        self.isTypingFloatingPointNumber = NO;
-        
+        self.isInTheMiddleOftypingSomething = NO;
     }
     //NSString *operation = [[sender titleLabel] text];
     NSString *operation = sender.titleLabel.text;
     double result = [[self calcModel] performOperation:operation];
     [self.calcDisplay setText:[NSString stringWithFormat:@"%g", result]];
     
-}
-
-- (IBAction)decimalPressed:(UIButton *)sender {
-    if (self.isTypingFloatingPointNumber)
-        return; // Returning if decimal was already pressed when
-    else
-        self.isTypingFloatingPointNumber = YES;
-    
-    if(self.isInTheMiddleOfTypingSomething)
-        self.calcDisplay.text = [self.calcDisplay.text stringByAppendingString:@"."];
-    else{
-        [self.calcDisplay setText:@"0."];
-        self.isInTheMiddleOfTypingSomething = YES;
-    }
 }
 @end
