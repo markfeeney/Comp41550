@@ -1,0 +1,15 @@
+Mark, Feeney, 12258178, mark.feeney@ucdconnect.ie
+
+Assignment 3 Part 1
+
+
+//Comments
+Added a label to display an error message if user trys a divide by zero or square root of a negative number or inverse of 0.
+
+The calcDisplayErrorMessage label on the storyboard is updated via a delegate mechanism.
+
+If an error occurs I set the hidden property of the calcDisplay TextField to false, and display the error message in calcDisplayErrorMessage Label.
+
+As per Extra Marks 1 I have also included an UIAlertView to display the same error to the user.
+
+

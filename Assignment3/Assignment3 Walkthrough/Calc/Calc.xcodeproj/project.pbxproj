@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B21055216F4AB7700A91107 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 7B21055116F4AB7700A91107 /* README */; };
 		7B88A17616C4341D006E2590 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88A17516C4341D006E2590 /* UIKit.framework */; };
 		7B88A17816C4341D006E2590 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88A17716C4341D006E2590 /* Foundation.framework */; };
 		7B88A17A16C4341D006E2590 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88A17916C4341D006E2590 /* CoreGraphics.framework */; };
@@ -20,10 +19,10 @@
 		7B88A18F16C4341D006E2590 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B88A18D16C4341D006E2590 /* MainStoryboard.storyboard */; };
 		7B88A19216C4341D006E2590 /* CalcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B88A19116C4341D006E2590 /* CalcViewController.m */; };
 		7B88A19A16C43441006E2590 /* CalcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B88A19916C43441006E2590 /* CalcModel.m */; };
+		7BE45E2D16F652210051C497 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 7BE45E2C16F652210051C497 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7B21055116F4AB7700A91107 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		7B88A17116C4341D006E2590 /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B88A17516C4341D006E2590 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7B88A17716C4341D006E2590 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,6 +41,7 @@
 		7B88A19116C4341D006E2590 /* CalcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcViewController.m; sourceTree = "<group>"; };
 		7B88A19816C43441006E2590 /* CalcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalcModel.h; sourceTree = "<group>"; };
 		7B88A19916C43441006E2590 /* CalcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalcModel.m; sourceTree = "<group>"; };
+		7BE45E2C16F652210051C497 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +61,7 @@
 		7B88A16616C4341D006E2590 = {
 			isa = PBXGroup;
 			children = (
+				7BE45E2C16F652210051C497 /* README */,
 				7B88A17B16C4341D006E2590 /* Calc */,
 				7B88A17416C4341D006E2590 /* Frameworks */,
 				7B88A17216C4341D006E2590 /* Products */,
@@ -88,7 +89,6 @@
 		7B88A17B16C4341D006E2590 /* Calc */ = {
 			isa = PBXGroup;
 			children = (
-				7B21055116F4AB7700A91107 /* README */,
 				7B88A18416C4341D006E2590 /* CalcAppDelegate.h */,
 				7B88A18516C4341D006E2590 /* CalcAppDelegate.m */,
 				7B88A18D16C4341D006E2590 /* MainStoryboard.storyboard */,
@@ -172,7 +172,7 @@
 				7B88A18A16C4341D006E2590 /* Default@2x.png in Resources */,
 				7B88A18C16C4341D006E2590 /* Default-568h@2x.png in Resources */,
 				7B88A18F16C4341D006E2590 /* MainStoryboard.storyboard in Resources */,
-				7B21055216F4AB7700A91107 /* README in Resources */,
+				7BE45E2D16F652210051C497 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
