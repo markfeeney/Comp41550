@@ -61,7 +61,6 @@
         <!--Calc View Controller-->
         <scene sceneID="85p-6w-fG8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v9E-R3-1ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="rTy-TS-MMa" customClass="CalcViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3su-BI-Gln">
                         <rect key="frame" x="0.0" y="64" width="320" height="704"/>
@@ -602,6 +601,7 @@
                         <outlet property="scaleUnitDisplay" destination="Pgc-5j-eTO" id="wk6-lu-BgW"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9E-R3-1ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="fdO-Dw-qdF" customClass="CalcModel"/>
             </objects>
             <point key="canvasLocation" x="-777" y="-814"/>
@@ -623,6 +623,41 @@
             <point key="canvasLocation" x="-2674" y="-429"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CalcModel" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalcModel.h"/>
+        </class>
+        <class className="CalcViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalcViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backspacePressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="changeScaleUnits:" candidateClass="UISegmentedControl"/>
+                <relationship kind="action" name="decimalPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="digitPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="graphPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="operationPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="solveExpressionPresssed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="variablePressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="calcDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="calcDisplayErrorMessage" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="calcModel" candidateClass="CalcModel"/>
+                <relationship kind="outlet" name="expressionDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="memoryDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scaleUnitDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GraphView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphView.h"/>
+        </class>
+        <class className="GraphViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ZoomInPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="ZoomOutPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="graphview" candidateClass="GraphView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
