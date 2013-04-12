@@ -19,7 +19,6 @@
 @synthesize calcDisplay = _calcDisplay;
 @synthesize isInTheMiddleOfTypingSomething = _isInTheMiddleOfTypingSomething;
 @synthesize isTypingFloatingPointNumber = _isTypingFloatingPointNumber;
-@synthesize graphViewController = _graphViewController;
 
 
 - (void)viewDidLoad
@@ -31,10 +30,11 @@
     //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     //self.navigationItem.rightBarButtonItem = addButton;
     
-      
+    self.delegate = [self.splitViewController.viewControllers lastObject];
+    self.calcModel.calcModelDelegate = self;
+
+     
     
-    self.graphViewController = (GraphViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    self.calcModel.calcModelDelegate = self;    
 }
 
 -(IBAction)digitPressed:(UIButton *)sender{
@@ -67,6 +67,7 @@
     self.calcDisplay.text = [NSString stringWithFormat:@"%g", result];
     self.memoryDisplay.text = [NSString stringWithFormat:@"%g", self.calcModel.memoryValue];
     self.expressionDisplay.text = [NSString stringWithFormat:@"%@", [self.calcModel descriptionOfExpresion:self.calcModel.expression]];
+    [self.delegate expressionHasChanged:nil];
 }
 
 - (IBAction)decimalPressed:(UIButton *)sender {
@@ -122,9 +123,7 @@
 
 - (IBAction)graphPressed:(UIButton *)sender {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){ // if in split view
-        self.graphViewController.calcExpression = self.calcModel.expression;
-        [self.graphViewController.graphview setNeedsDisplay];
-        
+        [self.delegate expressionHasChanged:self.calcModel.expression];
     }else{
         // else segue using showGraph
         [self performSegueWithIdentifier:@"GraphViewSegue" sender:self];
@@ -154,4 +153,10 @@
     
     self.calcDisplayErrorMessage.text = errormesage;
 }
+
+
+
+
 @end
+
+

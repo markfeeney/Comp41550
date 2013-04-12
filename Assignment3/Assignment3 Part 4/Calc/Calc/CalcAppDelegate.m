@@ -7,11 +7,30 @@
 //
 
 #import "CalcAppDelegate.h"
+#import "CalcViewController.h"
+
+#import "GraphViewController.h"
 
 @implementation CalcAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+    {
+    }
+    else
+    {
+        UISplitViewController *splitViewController = (UISplitViewController *) self.window.rootViewController;
+        splitViewController.delegate = [splitViewController.viewControllers lastObject];
+        GraphViewController *detailViewController =(GraphViewController *) [splitViewController.viewControllers lastObject];
+        CalcViewController *masterViewController = (CalcViewController *) [[splitViewController.viewControllers objectAtIndex:0] topViewController];
+        
+        masterViewController.delegate = detailViewController;
+    }
+    return YES;
+
+    
     // Override point for customization after application launch.
     return YES;
 }

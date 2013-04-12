@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CalcModel.h"
-
-@class GraphViewController;
+#import "GraphViewController.h"
 
 @interface CalcViewController : UIViewController <CalcModelDelegate>
+
+@property (nonatomic,retain) id<ExpressionChangedDelegate> delegate;
 
 @property (nonatomic, weak)IBOutlet CalcModel *calcModel;
 @property (nonatomic, weak)IBOutlet UILabel *calcDisplay;
@@ -21,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *memoryDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *scaleUnitDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *expressionDisplay;
-@property (strong, nonatomic) GraphViewController *graphViewController;
 
 - (IBAction)digitPressed:(UIButton *)sender;
 - (IBAction)operationPressed:(UIButton *)sender;

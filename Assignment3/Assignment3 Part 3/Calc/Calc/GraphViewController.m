@@ -19,11 +19,10 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initifalization
+        // Custom initialization
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -12,9 +12,12 @@
 -(void)calculationErrorHasOccured:(NSString*)errormessage;
 @end
 
+
 @interface CalcModel : NSObject
 
+
 @property (nonatomic,strong) id <CalcModelDelegate> calcModelDelegate;
+
 @property (nonatomic) double operand;
 @property (nonatomic) double waitingOperand;
 @property (nonatomic) NSString *waitingOperation;
@@ -22,6 +25,7 @@
 @property (nonatomic) NSString *scaleUnits;
 @property (readonly, strong) id expression;
 @property(nonatomic) Boolean operandisvariable;
+
 
 -(double)performOperation:(NSString *)operation;
 -(void)setVariableAsOperand:(NSString *)variableName;

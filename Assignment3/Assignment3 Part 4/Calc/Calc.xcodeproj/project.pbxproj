@@ -112,8 +112,8 @@
 				7BBB675B1709EE1F0088426F /* GraphView.m */,
 				7BBB675E1709FB310088426F /* GraphViewController.h */,
 				7BBB675F1709FB310088426F /* GraphViewController.m */,
-				7B1E4D721712276700AD1072 /* iphone.storyboard */,
 				7B1E4C141711699B00AD1072 /* ipad.storyboard */,
+				7B1E4D721712276700AD1072 /* iphone.storyboard */,
 				7B88A17C16C4341D006E2590 /* Supporting Files */,
 			);
 			path = Calc;

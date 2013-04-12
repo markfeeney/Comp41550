@@ -38,15 +38,10 @@
 }
 
 -(void)setScale:(float)scale{
-    
     if (_scale != scale) {
-        
         _scale = scale;
-        
         [self setNeedsDisplay];
     }
-    
-    
 }
 
 - (void)setOrigin:(CGPoint)origin
@@ -56,8 +51,6 @@
         [self setNeedsDisplay];
     }
 }
-
-
 
 - (CGPoint)origin
 {
@@ -71,22 +64,21 @@
 - (void)drawRect:(CGRect)rect
 {
     //[AxesDrawer drawAxesInRect:rect originAtPoint:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect)) scale:1];
+    // [AxesDrawer drawAxesInRect:rect originAtPoint:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect)) scale:self.scale];
+    [AxesDrawer drawAxesInRect:rect originAtPoint:CGPointMake(self.origin.x,self.origin.y) scale:self.scale];
     
-     [AxesDrawer drawAxesInRect:rect originAtPoint:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect)) scale:self.scale];
-   
-    //Now get the graph points and draw the graph
     NSArray *pointsToGraph = [self.graphviewDataSource getGraphDataPoints];
     
-    [self drawGraph:pointsToGraph originAtPoint:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect)) scale: self.scale];
-    
+    //[self drawGraph:pointsToGraph originAtPoint:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect)) scale: self.scale];
+    [self drawGraph:pointsToGraph originAtPoint:CGPointMake(self.origin.x,self.origin.y) scale: self.scale];
+   
 }
-
 
 - (void) drawGraph:(NSArray *)graphDataPoints originAtPoint:(CGPoint)axisOrigin scale: (float) scale{
     
     float centerPointX = axisOrigin.x;
     float centerPointY = axisOrigin.y;
-
+   
 	CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, 2.0);
     CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
@@ -100,38 +92,10 @@
         CGContextAddLineToPoint(context, dataPoint.x * scale + centerPointX,-(dataPoint.y * scale - centerPointY));
     }
     CGContextStrokePath(context);
-    
 }
 
 
--(void)pinch:(UIPinchGestureRecognizer *)recognizer
-{
-    if (recognizer.state == UIGestureRecognizerStateChanged ||
-        recognizer.state == UIGestureRecognizerStateEnded) {
-        self.scale *= recognizer.scale;
-        recognizer.scale = 1;
-    }
-}
 
--(void)pan:(UIPanGestureRecognizer *)recognizer
-{
-    if (recognizer.state == UIGestureRecognizerStateChanged ||
-        recognizer.state == UIGestureRecognizerStateEnded ) {
-        CGPoint translation = [recognizer translationInView:self];
-         
-        self.origin = CGPointMake(self.origin.x + translation.x, self.origin.y + translation.y);
-        [recognizer setTranslation:CGPointZero inView:self];
-        
-    }
-}
-
--(void)tap:(UITapGestureRecognizer *)recognizer
-{
-    if (recognizer.state == UIGestureRecognizerStateEnded) {
-        self.origin = [recognizer locationInView:self];
-    }
-    
-}
 
 
 

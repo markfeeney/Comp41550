@@ -8,7 +8,10 @@
 
 #import "CalcModel.h"
 
+
 @implementation CalcModel
+
+
 // @synthesize not required as Xcode synthesizes automatically
 @synthesize calcModelDelegate;
 @synthesize operand = _operand;
@@ -98,6 +101,7 @@
         [self performWaitingOperation];
         self.waitingOperation = operation;
         self.waitingOperand = self.operand;
+
     }
     return self.operand;
 }
