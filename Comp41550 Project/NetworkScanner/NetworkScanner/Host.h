@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface host : NSObject
+@interface Host : NSObject
 
 @property (strong, nonatomic) NSString *ipAddress;
 @property (strong, nonatomic) NSString *subnetMask;
 @property (strong, nonatomic) NSString *defaultGateway;
-
-
+@property (strong, nonatomic) NSString *macAddress;
 @property (strong, nonatomic) NSString *hostName;
 
 @end
