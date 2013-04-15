@@ -10,4 +10,11 @@
 
 @interface host : NSObject
 
+@property (strong, nonatomic) NSString *ipAddress;
+@property (strong, nonatomic) NSString *subnetMask;
+@property (strong, nonatomic) NSString *defaultGateway;
+
+
+@property (strong, nonatomic) NSString *hostName;
+
 @end

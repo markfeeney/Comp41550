@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet GraphView *graphview;
 @property (weak, nonatomic) CalcModel *calcModel;
 @property (weak, nonatomic) id calcExpression;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 
 - (IBAction)ZoomInPressed:(UIBarButtonItem *)sender;

@@ -9,7 +9,9 @@
 #import "GraphViewController.h"
 #import "AxesDrawer.h"
 
-@interface GraphViewController ()
+@interface GraphViewController (){
+    UINavigationBar *navBar;
+}
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
@@ -19,7 +21,7 @@
 
 
 @synthesize calcExpression = _calcExpression;
-
+@synthesize toolbar = _toolbar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,32 +36,32 @@
 {
     [super viewDidLoad];
     
+    self.splitViewController.delegate = self;
+    self.view = [[GraphView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIToolbar *toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){ // if in split view
+        [toolbar setItems:items animated:YES];
+        self.toolbar = toolbar;
+        [self.view addSubview:toolbar];
+    }
+    
+    self.graphview = (GraphView*) self.view;
     self.graphview.graphviewDataSource = self;
-    
-    
+    self.graphview.scale = 1;
+    self.graphview.origin = CGPointMake(CGRectGetMidX(self.view.bounds),CGRectGetMidY(self.view.bounds));
+            
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     float x = [prefs floatForKey:@"Xorigin"];
     float y = [prefs floatForKey:@"Yorigin"];
     float scale = [prefs floatForKey:@"Scale"];
         
-    if (scale != 0)
-        self.graphview.scale = scale;
+    if (scale != 0) self.graphview.scale = scale;
    
-    if (x!=0 && y!=0)
-        self.graphview.origin = CGPointMake(x, y);
-    
-    UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 41)]; navBar.delegate = self;
-    
-    UINavigationItem *backItem = [[UINavigationItem alloc] initWithTitle:@"Calculator"];
-    [navBar pushNavigationItem:backItem animated:NO];
-    
-    UINavigationItem *topItem = [[UINavigationItem alloc] initWithTitle:@"Graph of Expression"];
-    [navBar pushNavigationItem:topItem animated:NO];
-
-    //[self.navigationController popViewControllerAnimated:YES];
-
-    topItem.leftBarButtonItem = nil;
-    [self.view addSubview:navBar];
+    if (x!=0 && y!=0) self.graphview.origin = CGPointMake(x, y);
     
     UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     [doubleTapGestureRecognizer setNumberOfTapsRequired:2];
@@ -73,6 +75,8 @@
     [self.graphview  addGestureRecognizer:panGestureRecognizer];
     
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -180,7 +184,47 @@
     
 }
 
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+   
+    BOOL show = !(toInterfaceOrientation == UIInterfaceOrientationPortrait ||
+                 toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
+           
+    navBar.hidden  = show;
+        
+}
 
+- (BOOL)splitViewController:(UISplitViewController *)splitviewController
+        shouldHideViewController:(UIViewController *)viewController
+        inOrientation:(UIInterfaceOrientation)orientation {
+    
+    // Display master controller if in landscape mode
+    return UIInterfaceOrientationIsPortrait(orientation);
+    
+}
+
+- (void)splitViewController:(UISplitViewController *)splitviewController
+        willHideViewController:(UIViewController *)viewController
+        withBarButtonItem:(UIBarButtonItem *)barButtonItem
+        forPopoverController:(UIPopoverController *)popoverControllerc {
+    
+    // Show the bar button on the toolbar
+    barButtonItem.title = viewController.title;
+    barButtonItem.title = @"Calculator";
+    
+    NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
+    [toolbarItems insertObject:barButtonItem atIndex:0];
+    self.toolbar.items = toolbarItems;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitviewController
+        willShowViewController:(UIViewController *)viewController
+        invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+    
+    // Hide it
+    NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
+    [toolbarItems removeObject:barButtonItem];
+    self.toolbar.items = toolbarItems;
+}
 
 
 @end

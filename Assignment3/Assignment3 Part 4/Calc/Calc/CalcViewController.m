@@ -25,16 +25,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    //self.navigationItem.rightBarButtonItem = addButton;
-    
     self.delegate = [self.splitViewController.viewControllers lastObject];
     self.calcModel.calcModelDelegate = self;
 
-     
-    
+    self.contentSizeForViewInPopover = CGSizeMake(350, 800);
+
 }
 
 -(IBAction)digitPressed:(UIButton *)sender{
@@ -122,11 +117,14 @@
 }
 
 - (IBAction)graphPressed:(UIButton *)sender {
+    
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){ // if in split view
         [self.delegate expressionHasChanged:self.calcModel.expression];
     }else{
-        // else segue using showGraph
-        [self performSegueWithIdentifier:@"GraphViewSegue" sender:self];
+        GraphViewController *graphViewController = [[GraphViewController alloc] init];
+        graphViewController.calcExpression = self.calcModel.expression;
+        [self.navigationController pushViewController:graphViewController animated:YES];
     }
 }
 

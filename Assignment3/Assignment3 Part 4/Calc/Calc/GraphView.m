@@ -63,15 +63,12 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    //[AxesDrawer drawAxesInRect:rect originAtPoint:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect)) scale:1];
-    // [AxesDrawer drawAxesInRect:rect originAtPoint:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect)) scale:self.scale];
     [AxesDrawer drawAxesInRect:rect originAtPoint:CGPointMake(self.origin.x,self.origin.y) scale:self.scale];
     
     NSArray *pointsToGraph = [self.graphviewDataSource getGraphDataPoints];
     
     //[self drawGraph:pointsToGraph originAtPoint:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect)) scale: self.scale];
     [self drawGraph:pointsToGraph originAtPoint:CGPointMake(self.origin.x,self.origin.y) scale: self.scale];
-   
 }
 
 - (void) drawGraph:(NSArray *)graphDataPoints originAtPoint:(CGPoint)axisOrigin scale: (float) scale{

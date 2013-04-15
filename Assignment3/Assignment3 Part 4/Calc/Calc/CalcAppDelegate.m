@@ -21,12 +21,26 @@
     }
     else
     {
-        UISplitViewController *splitViewController = (UISplitViewController *) self.window.rootViewController;
-        splitViewController.delegate = [splitViewController.viewControllers lastObject];
-        GraphViewController *detailViewController =(GraphViewController *) [splitViewController.viewControllers lastObject];
-        CalcViewController *masterViewController = (CalcViewController *) [[splitViewController.viewControllers objectAtIndex:0] topViewController];
         
-        masterViewController.delegate = detailViewController;
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ipad" bundle:nil];
+        UISplitViewController* splitViewController = [[UISplitViewController alloc] init];
+
+        UIViewController *masterViewController = [sb instantiateViewControllerWithIdentifier:@"CalcViewController"];        
+        GraphViewController* detailViewController = [[GraphViewController alloc] init];
+
+        splitViewController.viewControllers = [NSArray arrayWithObjects:masterViewController, detailViewController, nil];
+        self.window.rootViewController = splitViewController;
+        [self.window makeKeyAndVisible];
+
+        
+        
+//        UISplitViewController *splitViewController = (UISplitViewController *) self.window.rootViewController;
+//        splitViewController.delegate = [splitViewController.viewControllers lastObject];
+//        GraphViewController *detailViewController =(GraphViewController *) [splitViewController.viewControllers lastObject];
+//        
+//        CalcViewController *masterViewController = (CalcViewController *) [[splitViewController.viewControllers objectAtIndex:0] topViewController];
+//        
+//        masterViewController.delegate = detailViewController;
     }
     return YES;
 

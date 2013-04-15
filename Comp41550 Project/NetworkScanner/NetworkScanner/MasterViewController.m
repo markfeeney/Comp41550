@@ -250,19 +250,19 @@
     switch (indexPath.row){
         case 0:
             textToDisplay =  @"Information";
-            imageToDisplay = @"about.png";
+            imageToDisplay = @"information.png";
             break;
         case 1:
             textToDisplay = @"Local Area Network";
-            imageToDisplay = @"about.png";
+            imageToDisplay = @"network_scanner_icon_72.png";
             break;
         case 2:
             textToDisplay = @"Utilities";
-            imageToDisplay = @"about.png";
+            imageToDisplay = @"utillities72.png";
             break;
         case 3:
             textToDisplay = @"About";
-            imageToDisplay = @"about.png";
+            imageToDisplay = @"information.png";
             break;
         default:
             break;
