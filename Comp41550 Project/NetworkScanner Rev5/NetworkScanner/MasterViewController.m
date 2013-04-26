@@ -132,12 +132,14 @@
     
     NSLog(@"%d", indexPath.row) ;
     
+      //[[self.splitViewController.viewControllers objectAtIndex:1]popNavigationItemAnimated:NO];
+    
     if (indexPath.row == 0){
         InformationViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InformationViewController"];
         [[self.splitViewController.viewControllers objectAtIndex:1]pushViewController:detailViewController animated:NO];
     }
     if (indexPath.row == 1){
-        AboutViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
+        AboutViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LANViewController"];
         [[self.splitViewController.viewControllers objectAtIndex:1]pushViewController:detailViewController animated:NO];
     }else if (indexPath.row == 2){
 
@@ -147,6 +149,8 @@
         
         AboutViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
         [[self.splitViewController.viewControllers objectAtIndex:1]pushViewController:detailViewController animated:NO];
+      
+        
     }
 }
 
@@ -267,19 +271,19 @@
     switch (indexPath.row){
         case 0:
             textToDisplay =  @"Information";
-            imageToDisplay = @"about.png";
+            imageToDisplay = @"information.png";
             break;
         case 1:
             textToDisplay = @"Local Area Network";
-            imageToDisplay = @"about.png";
+            imageToDisplay = @"network_scanner_icon_72.png";
             break;
         case 2:
             textToDisplay = @"Utilities";
-            imageToDisplay = @"about.png";
+            imageToDisplay = @"utilities72.png";
             break;
         case 3:
             textToDisplay = @"About";
-            imageToDisplay = @"about.png";
+            imageToDisplay = @"home.png";
             break;
         default:
             break;

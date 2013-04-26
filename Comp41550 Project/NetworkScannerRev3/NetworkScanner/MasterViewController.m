@@ -9,8 +9,6 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
-#import "AboutViewController.h"
-#import "InformationViewController.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -35,8 +33,7 @@
 
     //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     //self.navigationItem.rightBarButtonItem = addButton;
-    //self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    
+    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,37 +113,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         self.detailViewController.detailItem = object;
-    }
-    */
-    // Navigation logic may go here. Create and push another view controller.
-    
-    //AboutViewController *detailViewController = [[AboutViewController alloc]init]; //initWithNibName:@"<#Nib name#>" bundle:nil];
-    
-    //AboutViewController *detailViewController = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-    
-    NSLog(@"%d", indexPath.row) ;
-    
-    if (indexPath.row == 0){
-        InformationViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InformationViewController"];
-        [[self.splitViewController.viewControllers objectAtIndex:1]pushViewController:detailViewController animated:NO];
-    }
-    if (indexPath.row == 1){
-        AboutViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
-        [[self.splitViewController.viewControllers objectAtIndex:1]pushViewController:detailViewController animated:NO];
-    }else if (indexPath.row == 2){
-
-        InformationViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InformationViewController"];
-        [[self.splitViewController.viewControllers objectAtIndex:1]pushViewController:detailViewController animated:NO];
-    }else if (indexPath.row == 3){
-        
-        AboutViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
-        [[self.splitViewController.viewControllers objectAtIndex:1]pushViewController:detailViewController animated:NO];
     }
 }
 
@@ -157,7 +126,6 @@
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     }
-
 }
 
 #pragma mark - Fetched results controller
@@ -294,9 +262,9 @@
     
     //Set value for label text and image name
     myTextLabel.text = textToDisplay;
-    //myTextLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:14];
-    myTextLabel.font = [UIFont boldSystemFontOfSize:15.0];
-    //myTextLabel.textColor = [UIColor blueColor];
+    myTextLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:14];
+    myTextLabel.textColor = [UIColor blueColor];
+    
     
     myTextLabel.frame= CGRectMake(35,10,200,20);
     
@@ -306,7 +274,6 @@
     [containerView addSubview:myTextLabel];
     [containerView addSubview:imageView];
     
-    [cell.contentView addSubview:containerView];
-}
+    [cell.contentView addSubview:containerView];}
 
 @end
