@@ -51,10 +51,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
-        
-    
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,7 +71,7 @@
     // Return the number of rows in each section.
     switch(section){
         case 0:
-            return 4;
+            return 5;
             break;
         case 1:
             return 1;
@@ -188,22 +184,22 @@
             case 0:
                 textLabelHeading =  @"IP Address";
                 textLabelDetail =  [self localhost].ipAddress;
-                //imageToDisplay = @"about.png";
                 break;
             case 1:
                 textLabelHeading = @"Subnet Mask";
                 textLabelDetail = [self localhost].subnetMask;
-                //imageToDisplay = @"about.png";
                 break;
             case 2:
                 textLabelHeading = @"Default Gateway";
                 textLabelDetail =  [self localhost].defaultGateway;
-                //imageToDisplay = @"about.png";
                 break;
             case 3:
+                textLabelHeading = @"MAC Address";
+                textLabelDetail =  [self localhost].macAddress;
+                break;
+            case 4:
                 textLabelHeading = @"DNS Server";
                 textLabelDetail =  [self localhost].dnsServer;
-                //imageToDisplay = @"about.png";
                 break;
             default:
                 break;
@@ -213,7 +209,6 @@
             case 0:
                 textLabelHeading =  @"External IP Address";
                 textLabelDetail =  [self localhost].externalIPAddress;
-                //imageToDisplay = @"about.png";
                 break;
             case 1:
                 //textLabelHeading = @"SSID";
@@ -238,20 +233,23 @@
                 break;
             case 1:
                 textLabelHeading = @"SSID";
-                textLabelDetail =  _localhost.ssid;
-
-                //imageToDisplay = @"about.png";
+                textLabelDetail =  [self localhost].SSID;
                 break;
             case 2:
                 textLabelHeading = @"BSSID";
-                textLabelDetail =  _localhost.bssid;
-                //imageToDisplay = @"about.png";
+                textLabelDetail =  [self localhost].BSSID;
                 break;
             case 3:
-                //textLabelHeading = @"Facebook Page";
-                //textLabelDetail =  @"Mark Feeney";
-                //imageToDisplay = @"about.png";
+                textLabelHeading =  @"Internet Connected";
+                if ([self localhost].internetConnected){
+                    textLabelDetail =  @"Yes";
+                    imageToDisplay = @"green_dot.png";
+                }else{
+                    textLabelDetail =  @"No";
+                    imageToDisplay = @"red_dot.png";
+                }
                 break;
+            
             default:
                 break;
         }
@@ -265,22 +263,18 @@
     
     //Create a container for the cell
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, 600, 40)];
-     //Set value for label text and image name
     myTextLabelHeading.text = textLabelHeading;
-    //myTextLabelHeading.font = [UIFont fontWithName:@"Helvetica" size:14];
     myTextLabelHeading.font = [UIFont boldSystemFontOfSize:15.0];
-    //myTextLabelHeading.textColor = [UIColor blueColor];
     myTextLabelHeading.frame= CGRectMake(15,10,250,20);
-    //myTextLabelHeading.backgroundColor = [UIColor blueColor];
-    
     myTextLabelDetail.text = textLabelDetail;
     myTextLabelDetail.font = [UIFont fontWithName:@"Verdana" size:14];
     myTextLabelDetail.textColor = [UIColor blueColor];
     myTextLabelDetail.textAlignment = NSTextAlignmentRight;
     myTextLabelDetail.frame= CGRectMake(335,10,250,20);
-     
+    
+        
     UIImageView *imageView =[[UIImageView alloc]initWithImage:image];
-    imageView.frame= CGRectMake(580,10,20,20);
+    imageView.frame= CGRectMake(585,10,20,20);
     
     [containerView addSubview:myTextLabelHeading];
     [containerView addSubview:myTextLabelDetail];

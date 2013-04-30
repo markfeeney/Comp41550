@@ -14,11 +14,7 @@
 
 @class Reachability;
 
-@interface LocalHost : NSObject{
-    Reachability* hostReach;
-    Reachability* internetReach;
-    Reachability* wifiReach;
-}
+@interface LocalHost : NSObject
 
 
 @property (retain, nonatomic)  Reachability* reach;
@@ -30,9 +26,10 @@
 @property (nonatomic) NSString * externalIPAddress;
 @property (nonatomic) NSString * dnsServer;
 @property (nonatomic) NSString * macAddress;
-@property (nonatomic) NSString * ssid;
-@property (nonatomic) NSString * bssid;
+@property (nonatomic) NSString * SSID;
+@property (nonatomic) NSString * BSSID;
 @property (nonatomic) Boolean networkConnected;
+@property (nonatomic) Boolean internetConnected;
 
 @property (nonatomic,strong) id <LocalHostlDelegate> localhostDelegate;
 

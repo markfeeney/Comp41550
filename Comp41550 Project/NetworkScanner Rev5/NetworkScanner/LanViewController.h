@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LanViewController : UITableViewController
+@interface LanViewController : UITableViewController{
+    NSArray *hostsArray;
+}
 
 @end

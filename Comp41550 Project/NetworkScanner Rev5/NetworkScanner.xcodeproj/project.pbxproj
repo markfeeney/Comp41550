@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B05A6C5172C2DE10042B505 /* Host.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B05A6C4172C2DE10042B505 /* Host.m */; };
+		7B05A6CB172C4F4F0042B505 /* PingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B05A6CA172C4F4F0042B505 /* PingViewController.m */; };
+		7B05A6D7172D33A60042B505 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B05A6D3172D32E50042B505 /* CFNetwork.framework */; };
+		7B05A6D8172D34460042B505 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B05A6D6172D334D0042B505 /* SimplePing.m */; };
 		7B389BBE172A4CC7006B7E43 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B389BBD172A4CC7006B7E43 /* home.png */; };
+		7B389C56172A8045006B7E43 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B389C55172A8045006B7E43 /* SystemConfiguration.framework */; };
 		7B45C4951722C65000F18634 /* LocalHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B45C4941722C65000F18634 /* LocalHost.m */; };
 		7B45C4A81722DC1400F18634 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B45C49A1722DC1300F18634 /* information.png */; };
 		7B45C4AF1722DC1400F18634 /* airport114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B45C4A11722DC1300F18634 /* airport114x114.png */; };
@@ -16,7 +21,6 @@
 		7B45C4B21722DC1400F18634 /* utilities72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B45C4A41722DC1300F18634 /* utilities72.png */; };
 		7B45C4B31722DC1400F18634 /* utilities114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B45C4A51722DC1300F18634 /* utilities114x114.png */; };
 		7B45C4B41722DC1400F18634 /* amber_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B45C4A61722DC1300F18634 /* amber_dot.png */; };
-		7B45C4B61722EED500F18634 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B45C4B51722EED500F18634 /* SystemConfiguration.framework */; };
 		7B45C4B91722FE5700F18634 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B45C4B81722F6BD00F18634 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7B60D5E41723CCD700ED9C42 /* LanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B60D5E31723CCD600ED9C42 /* LanViewController.m */; };
 		7B60D61A1723D4C800ED9C42 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B60D6191723D4C800ED9C42 /* InformationViewController.m */; };
@@ -47,7 +51,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B05A6C3172C2DE10042B505 /* Host.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Host.h; sourceTree = "<group>"; };
+		7B05A6C4172C2DE10042B505 /* Host.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Host.m; sourceTree = "<group>"; };
+		7B05A6C9172C4F4F0042B505 /* PingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PingViewController.h; path = ../PingViewController.h; sourceTree = "<group>"; };
+		7B05A6CA172C4F4F0042B505 /* PingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PingViewController.m; path = ../PingViewController.m; sourceTree = "<group>"; };
+		7B05A6D3172D32E50042B505 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7B05A6D5172D334D0042B505 /* SimplePing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		7B05A6D6172D334D0042B505 /* SimplePing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
 		7B389BBD172A4CC7006B7E43 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		7B389C55172A8045006B7E43 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7B45C4931722C65000F18634 /* LocalHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalHost.h; path = NetworkScanner/LocalHost.h; sourceTree = "<group>"; };
 		7B45C4941722C65000F18634 /* LocalHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalHost.m; path = NetworkScanner/LocalHost.m; sourceTree = "<group>"; };
 		7B45C49A1722DC1300F18634 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
@@ -57,7 +69,6 @@
 		7B45C4A41722DC1300F18634 /* utilities72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = utilities72.png; sourceTree = "<group>"; };
 		7B45C4A51722DC1300F18634 /* utilities114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = utilities114x114.png; sourceTree = "<group>"; };
 		7B45C4A61722DC1300F18634 /* amber_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amber_dot.png; sourceTree = "<group>"; };
-		7B45C4B51722EED500F18634 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7B45C4B71722F6BC00F18634 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		7B45C4B81722F6BD00F18634 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		7B60D5E21723CCD600ED9C42 /* LanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanViewController.h; sourceTree = "<group>"; };
@@ -102,7 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B45C4B61722EED500F18634 /* SystemConfiguration.framework in Frameworks */,
+				7B05A6D7172D33A60042B505 /* CFNetwork.framework in Frameworks */,
+				7B389C56172A8045006B7E43 /* SystemConfiguration.framework in Frameworks */,
 				7BBB68D4170E15B60088426F /* UIKit.framework in Frameworks */,
 				7BBB68D6170E15B60088426F /* Foundation.framework in Frameworks */,
 				7BBB68D8170E15B60088426F /* CoreGraphics.framework in Frameworks */,
@@ -120,6 +132,10 @@
 				7B45C4941722C65000F18634 /* LocalHost.m */,
 				7B45C4B71722F6BC00F18634 /* Reachability.h */,
 				7B45C4B81722F6BD00F18634 /* Reachability.m */,
+				7B05A6C3172C2DE10042B505 /* Host.h */,
+				7B05A6C4172C2DE10042B505 /* Host.m */,
+				7B05A6D5172D334D0042B505 /* SimplePing.h */,
+				7B05A6D6172D334D0042B505 /* SimplePing.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -145,7 +161,8 @@
 		7BBB68D2170E15B60088426F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7B45C4B51722EED500F18634 /* SystemConfiguration.framework */,
+				7B05A6D3172D32E50042B505 /* CFNetwork.framework */,
+				7B389C55172A8045006B7E43 /* SystemConfiguration.framework */,
 				7BBB68D3170E15B60088426F /* UIKit.framework */,
 				7BBB68D5170E15B60088426F /* Foundation.framework */,
 				7BBB68D7170E15B60088426F /* CoreGraphics.framework */,
@@ -171,6 +188,8 @@
 				7BBB68F7170E15B70088426F /* MasterViewController.m */,
 				7BBB68F9170E15B70088426F /* DetailViewController.h */,
 				7BBB68FA170E15B70088426F /* DetailViewController.m */,
+				7B05A6C9172C4F4F0042B505 /* PingViewController.h */,
+				7B05A6CA172C4F4F0042B505 /* PingViewController.m */,
 				7BBB68F3170E15B70088426F /* NetworkScanner.xcdatamodeld */,
 				7BBB6901170E18140088426F /* Resources */,
 				7BBB68DC170E15B60088426F /* Supporting Files */,
@@ -317,6 +336,9 @@
 				7B45C4951722C65000F18634 /* LocalHost.m in Sources */,
 				7B60D5E41723CCD700ED9C42 /* LanViewController.m in Sources */,
 				7B60D61A1723D4C800ED9C42 /* InformationViewController.m in Sources */,
+				7B05A6C5172C2DE10042B505 /* Host.m in Sources */,
+				7B05A6CB172C4F4F0042B505 /* PingViewController.m in Sources */,
+				7B05A6D8172D34460042B505 /* SimplePing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +433,7 @@
 		7BBB68FF170E15B70088426F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetworkScanner/NetworkScanner-Prefix.pch";
 				INFOPLIST_FILE = "NetworkScanner/NetworkScanner-Info.plist";

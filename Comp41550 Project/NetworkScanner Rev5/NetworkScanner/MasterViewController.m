@@ -143,7 +143,7 @@
         [[self.splitViewController.viewControllers objectAtIndex:1]pushViewController:detailViewController animated:NO];
     }else if (indexPath.row == 2){
 
-        InformationViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InformationViewController"];
+        InformationViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PingViewController"];
         [[self.splitViewController.viewControllers objectAtIndex:1]pushViewController:detailViewController animated:NO];
     }else if (indexPath.row == 3){
         
@@ -302,6 +302,13 @@
     myTextLabel.font = [UIFont boldSystemFontOfSize:15.0];
     //myTextLabel.textColor = [UIColor blueColor];
     
+    
+    [myTextLabel setFont:[UIFont boldSystemFontOfSize:15.0]];
+    [myTextLabel setTextColor:[UIColor colorWithRed:0.223 green:0.266 blue:0.349 alpha:1.0]];
+    [myTextLabel setShadowColor:[UIColor whiteColor]];
+    [myTextLabel setShadowOffset:CGSizeMake(1.0,1.0)];
+
+    
     myTextLabel.frame= CGRectMake(35,10,200,20);
     
     UIImageView *imageView =[[UIImageView alloc]initWithImage:image];
@@ -312,5 +319,6 @@
     
     [cell.contentView addSubview:containerView];
 }
+
 
 @end
